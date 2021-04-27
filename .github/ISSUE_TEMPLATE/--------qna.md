@@ -1,8 +1,8 @@
 ---
 name: 네이버클라우드 QnA
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
+about: 네이버클라우드 질문
+title: "[NaverCloud]"
+labels: 네이버클라우드
 assignees: ''
 
 ---
