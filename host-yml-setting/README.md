@@ -3,10 +3,10 @@
 master_isolation: "yes" \
  → Master에 Pod를 배포할 것인지 선택하는 옵션입니다. Master의 부하를 줄이기 위해 yes로 설정합니다.
 
- 
 ### master_host_name: "oidc001" 			
  → Master 1번의 hostname을 입력합니다.
-master_ip: 192.168.0.6 					
+
+### master_ip: 192.168.0.6 					
  → Master 1번의 IP를 입력합니다.
  
 ### nfs_setup ( internal / external )
