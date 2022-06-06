@@ -1,15 +1,13 @@
-# OIDC2022
-************************************************************ host 파일 설정 ************************************************************
-# host-cluster List → 생성한 VM의 hostname을 넣어줍니다.(NCP에서 VM을 생성할 때, oidc을 넣어주어서 oidc001, 002, 003으로 생성되게 초기에 셋팅합니다.)
+host-cluster List → 생성한 VM의 hostname을 넣어줍니다.(NCP에서 VM을 생성할 때, oidc을 넣어주어서 oidc001, 002, 003으로 생성되게 초기에 셋팅합니다.)
 ※ 예시
 oidc001    ansible_host=192.168.0.6   ansible_connection=ssh   node_role=infra
 oidc002    ansible_host=192.168.0.7   ansible_connection=ssh   node_role=infra
 oidc003    ansible_host=192.168.0.8   ansible_connection=ssh   node_role=infra
 
-# member-cluster List
+member-cluster List
 패스
 
-# Group List
+Group List
 [local] → 기본값으로 나둡니다.
 install-server
 
@@ -30,6 +28,3 @@ oidc002
 oidc003
 
 나머지는 건드리지 않습니다.
-************************************************************ host 파일 설정 ************************************************************
-
-
