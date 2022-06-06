@@ -27,7 +27,7 @@ nfs_version: "v4"\
 
 ### accordion_registry_option ( local / external )
 base_registry_option: "local"\
-base_registry_address: 192.168.0.6	\	
+base_registry_address: 192.168.0.6	
  → Master 1번의 IP를 입력합니다.\
 base_registry_port: 5000\
 base_registry_id: accregistry\
@@ -35,7 +35,7 @@ base_registry_passwd: accordionadmin
 
 ### registry_option ( registry / harbor)
 user_registry_option: "registry"\
-user_registry_address: 192.168.0.6	\	
+user_registry_address: 192.168.0.6	
  → Master 1번의 IP를 입력합니다.\
 user_registry_port: 30001
 
