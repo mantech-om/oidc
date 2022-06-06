@@ -1,0 +1,157 @@
+#- setup variable for cluster installation
+
+########################################################
+## Master configuation
+########################################################
+# master isolation ( yes / no ) 
+master_isolation: "yes"
+master_host_name: "oidc001"
+master_ip: 192.168.0.6
+
+########################################################
+# 3master mode( yes / no )
+########################################################
+master_mode: "no"
+master2_ip: 10.140.0.5
+master3_ip: 10.140.0.6
+master2_hostname: "acc-master2"
+master3_hostname: "acc-master3"
+# L4_mode ( L4 / haproxy )
+L4_mode: "haproxy"
+haproxy_port: 8443
+keep_vip: 10.140.0.10
+keep_interface: eth0
+# Set it up if you want to add the master server later
+# If master_mode is "no", it will not work.
+# single_option( yes / no )
+single_option: "no"
+
+########################################################
+## container_name (containerd & cri-o)
+########################################################
+container_option: "containerd"
+
+# container_option (containerd)
+selinux_enable: "no"
+
+# container_option (cri-o)
+crio_interface: "eth0"
+pid_limit: "4096"
+
+########################################################
+# storage setting
+########################################################
+# storage_option ( nfs / ceph )
+storage_option: "nfs"
+
+# nfs_setup ( internal / external )
+nfs_setup: "external"
+nfs_server_ip: 169.254.84.49
+accordion_nfs_path: "/n2863303_oidc"
+
+# nfs_version ( v3 / v4 )
+#nfs_version: "v3"
+nfs_version: "v4"
+
+# ceph_option ( cephfs / rbd )
+ceph_option: "cephfs"
+
+#ceph health, ceph fsid, ceph auth get-key client.admin, ceph status
+ceph_server_ip: "10.20.200.107"
+ceph_server_port: "6789"
+ceph_id: "admin"
+ceph_key: "AQCKoqVh0eR5MxAAL4WziV7oyVsdtHC6Wz0RcQ=="
+#ceph_id: "kubernetes"
+#ceph_key: "AQBDpKVhFhPCIRAAf1xqSLgi558DIH+FvcCyMQ=="
+ceph_fsid: "84ab6f51-d13e-4a83-9ccc-fd3b9228e728"
+ceph_fsname: "cephfs"
+#ceph_fsname: "cephrbd_pool"
+
+########################################################
+# etcd external option
+########################################################
+etcd_external: "no"
+
+########################################################
+# base registry
+########################################################
+# accordion_registry_option ( local / external )
+base_registry_option: "local"
+base_registry_address: 192.168.0.6
+base_registry_port: 5000
+base_registry_id: accregistry
+base_registry_passwd: accordionadmin
+
+########################################################
+# user registry
+########################################################
+# registry_option ( registry / harbor)
+user_registry_option: "registry"
+user_registry_address: 192.168.0.6
+user_registry_port: 30001
+
+# registry_external ( yes / no )
+user_registry_external: "no"
+
+# user_registry_external: "yes"
+user_registry_id: accregistry
+user_registry_pw: accordionadmin
+
+# registry information
+htpasswd_option: "yes"
+
+########################################################
+# Network Setting
+########################################################
+# CNI (calico or weave)
+network_cni: "calico"
+# podman Network
+podman_cidr: "172.17.0.0/16"
+# Pod Network (weave)
+IPALLOC_RANGE: "172.32.0.0/12"
+# Pod Network (calico)
+pod_network_cidr: "172.32.0.0/16"
+# Calico Mode (IPIP & vxlan)
+#calico_backend: "IPIP"
+calico_backend: "vxlan"
+# kubernetes Service Network
+service_cidr: "10.96.0.0/12"
+kubelet_clusterdns: "10.96.0.10"
+kubernetes_clusterip: "10.96.0.1"
+
+########################################################
+## container dir
+########################################################
+containers_storage_runroot: /oidc/var/run/containers
+containers_storage_volume: /oidc/var/lib/containers
+
+########################################################
+## Kubernetes dir
+########################################################
+kubelet_root_dir: /var/lib
+kube_addon_dir: /etc/kubernetes/addon
+docker_rpm_dir: /oidc/tmp
+
+
+########################################################
+# If the external IP is set up on the master server, enter the IP.
+########################################################
+master_external_ip: "127.0.0.1"
+
+########################################################
+## Add node option (yes / no)
+########################################################
+noschedule: "no"
+
+##########################################
+## accordion GPU monitoring(yes/no)
+##########################################
+gpu_server: "no"
+
+##########################################
+## external prometheus
+##########################################
+external_prometheus: "no"
+prometheus_name: "prometheus-operator-prometheus"
+prometheus_ns: "acc-system"
+
